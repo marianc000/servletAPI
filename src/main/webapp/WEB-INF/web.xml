@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+    
+    
+    <session-config>
+        <session-timeout>
+            44
+        </session-timeout>
+    </session-config>
+   <request-character-encoding>ISO-8859-1</request-character-encoding> 
+    <!--<response-character-encoding>UTF-8</response-character-encoding>-->
+        <response-character-encoding>ISO-8859-1</response-character-encoding>
+    <context-param>
+        <param-name>contextParam</param-name>
+        <param-value>test</param-value>
+    </context-param>
+    <filter>
+        <filter-name>FILTER2</filter-name>
+        <filter-class>filters.Filter2</filter-class>
+        <init-param>
+            <param-name>param</param-name>
+            <param-value>test</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>FILTER2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+<!--    <mime-mapping>
+        <extension>html</extension>
+        <mime-type>text/html;charset=utf-8</mime-type>
+    </mime-mapping>-->
+    <default-context-path>/default</default-context-path>
+</web-app>
